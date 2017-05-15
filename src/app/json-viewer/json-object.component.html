@@ -1,0 +1,7 @@
+<div *ngFor="let item of items" class="item">
+    {{item}}:
+
+    <span *ngIf="!isObject(object[item]) && !isArray(object[item])">{{object[item]}}</span>
+
+    <app-json-object *ngIf="isObject(object[item]) || isArray(object[item])" [object]="object[item]"></app-json-object>
+</div>
